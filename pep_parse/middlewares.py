@@ -3,10 +3,11 @@ from scrapy import signals
 
 class PepParse:
     @classmethod
-    def from_crawler(class_method, crawler):
-        s = class_method()
-        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
-        return s
+    def from_crawler(cls, crawler):
+        pipeline = cls()
+        crawler.signals.connect(pipeline.spider_opened,
+                                signal=signals.spider_opened)
+        return pipeline
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
