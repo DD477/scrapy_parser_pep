@@ -16,7 +16,11 @@ class PepParsePipeline:
         pass
 
     def process_item(self, item, spider):
-        self.pep_sum[item['status']] += 1
+        key = 'status'
+        try:
+            self.pep_sum[item[key]] += 1
+        except KeyError:
+            print(f'В словаре item отсутствует ключ {key}')
         return item
 
     def close_spider(self, spider):
