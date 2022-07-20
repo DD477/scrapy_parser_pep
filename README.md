@@ -47,3 +47,11 @@ pip install -r requirements.txt
 ```sh
 scrapy crawl pep 
 ```
+
+### Автор:
+
+- [Dmitrii Dobrodeev](https://github.com/DD477)
+
+## Лицензия
+- MIT
+
