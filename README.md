@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ```
 
 - Запустить парсер 
-```sh
+```
 scrapy crawl pep 
 ```
 
